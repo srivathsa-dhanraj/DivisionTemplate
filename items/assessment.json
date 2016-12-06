@@ -1,0 +1,135 @@
+{
+	"identifier": "",
+	"title": "",
+	"total_items": 2,
+    "shuffle":false,
+	"optionShuffle": false,
+	"max_score": 9,
+	"subject": "LIT",
+	"item_sets": [
+		{
+			"id": "set_1",
+        	"count": 2
+		}
+	],
+	"items": {
+		"set_1" : [
+        {
+			"qid": "lol",
+			"type": "mcq",	
+            "question_image":"hundred",
+				"template_id": "org.ekstep.mcq.test", 
+				"template": "org.ekstep.mcq.test",
+
+				"media": [
+				{
+					"id": "home_image",
+					"type": "image",
+					"src": "icon_home.png", 
+					"asset_id": "home_image" 
+				},
+				{
+					"id": "hundred",
+					"type": "image",
+					"src": "uth/Hundreds.png", 
+					"asset_id": "hundred" 
+				},
+				{
+					"id": "tenth",
+					"type": "image",
+					"src": "uth/tens.png", 
+					"asset_id": "tenth" 
+				},
+				{
+					"id": "one",
+					"type": "image",
+					"src": "uth/ones.png", 
+					"asset_id": "one" 
+				}
+				
+				],
+			
+				"title": "title goes here",
+				"question1": "2",
+				"question2": "0",
+				"question_audio": "",
+				"question_count": "",
+				
+
+				"options": [
+					{
+						"value": {"type": "mixed", "audio": "", "image": "hundred", "text":"542", "asset":""},
+						"answer": true,
+						"score": 1
+					},
+					{
+						"value": {"type": "mixed", "audio": "", "image": "tenth", "text":"555", "asset":""}
+					},
+					{
+						"value": {"type": "mixed", "audio": "", "image": "one", "text":"666", "asset":""}
+					},
+					{
+						"value": {"type": "mixed", "audio": "", "image": "hundred", "text":"777", "asset":""}
+					}
+				],
+				"model" : {
+						"question_number" : ""
+						},
+
+   
+				"keywords": ["array", "of", "strings"]
+			},
+            {
+				"identifier": "sample",
+				"type": "mtf",
+                "question":"This is a question. Big big sentence. this should take it to sencond line",
+				"template": "4.mtf.lhs.img_txt.aud-rhs.img_txt.aud.horizontal",
+				"qlevel": "MEDIUM",
+				"title": "Match the tools to the people.",
+				"lhs_options": [
+					{
+						"value": {"type": "mixed", "text": "Barber", "image":"hundred"},
+						"index": 0
+					},
+					{
+						"value": {"type": "mixed", "text": "Carpenter", "image":"hundred"},
+						"index": 1
+					},
+					{
+						"value": {"type": "mixed", "text": "Tailor", "image":"hundred"},
+						"index": 2
+					},
+					{
+						"value": {"type": "mixed", "text": "Wife", "image":"hundred"},
+						"index": 3
+					}
+				],
+				"rhs_options": [
+					{
+						"value": {"type": "mixed", "text": "Knife", "image":"hundred"},
+						"answer": 0
+					},
+					{
+						"value": {"type": "mixed", "text": "Razor", "image":"hundred"},
+						"answer": 1
+					},
+					{
+						"value": {"type": "mixed", "text": "Razor", "image":"hundred"},
+						"answer": 2
+					},
+					{
+						"value": {"type": "mixed", "text": "Razor", "image":"hundred"},
+						"answer": 3
+					}
+				],
+                
+				"max_score": 4,
+				"partial_scoring": true,
+				"feedback": ""
+			}
+                
+		
+		
+		]
+	}
+}

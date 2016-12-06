@@ -1,0 +1,95 @@
+<theme id="theme" startStage="first" ver="0.2">
+    <manifest>
+        <media id="home_image" src="icon_home.png" type="image"/>
+        <media id="thousand" src="thousand.png" type="image" />
+        <media id="hundred" src="hundred.png" type="image" />
+        <media id="ten" src="ten.png" type="image" />
+        <media id="one" src="one.png" type="image" />
+        <media id="uth" src="uthPlugin.js" type="plugin"/>
+<!--
+        <media id="place" src="PlacePlugin.js" type="plugin"/>                
+        <media id="tray" src="TrayPlugin.js" type="plugin"/>
+-->
+
+    </manifest>
+	
+    <stage id="tempBaseStage" preload="true">
+        <image asset="thousand"/>
+        <image asset="hundred"/>
+        <image asset="ten"/>
+        <image asset="one"/>
+        <image asset="home_image"/>
+    </stage>
+    
+	<controller id="assessment" name="assessment" type="items"/>
+	
+	<template id="org.ekstep.mcq.test">
+    <!--<place id="uth" x="5" y="5" w="10" h="10" asset="hundred"/>-->
+        <division x="0" y="0" w="100" h="100"/>
+<!--        <text id="testText" x="20" y="20" w="60" h="20" fontsize="em">SMOKE WEEK EVERYDAY. Nana nana na!!</text>-->
+           
+<!--            <tray id="tray1" x="0" y="0" w="50" h="50" number="item.question1" model="item.question_image"/>       -->
+<!--            <tray id="tray2" x="50" y="50" w="50" h="50" number="item.question2" model="item.question_image"/>-->
+        
+        
+
+	</template>
+    <template id="4.mtf.lhs.img_txt.aud-rhs.img_txt.aud.horizontal">
+        <text align="center" color="black" fontsize="2em" model="item.question" w="80" x="10" y="1"/>
+        <shape h="15" hitArea="true" id="retry" type="rect" visible="true" w="80" x="10" y="2">
+            <event type="click">
+                <action command="stop" sound="true" type="command" asset_model="item.question_audio"/>
+                <action asset_model="item.question_audio" command="play" type="command"/>
+            </event>
+        </shape>
+        <mtf force="true" model="item">
+            <options cols="5" h="54" layout="table" marginX="5" marginY="1" options="lhs_options" snapX="0.1" snapY="50" w="96" x="2" y="12">
+                <g h="49" w="100" x="0" y="0">
+                    <image align="center" h="100" model="option.value.image" stretch="false" valign="middle" w="100" x="0" y="0"/>
+                    <text align="center" fontsize="2em" h="100" model="option.value.text" valign="middle" w="100"  x="0" y="0"/>
+                </g>
+                <image h="48" asset="whiteBox" w="98" x="1" y="51"/>
+                
+                <event type="click">
+                    <action command="stop" sound="true" type="command" asset_model="option.value.audio"/>
+                    <action asset_model="option.value.audio" command="play" type="command"/>
+                </event>
+            </options>
+            <options cols="5" h="27" layout="table" marginX="5" marginY="1" options="rhs_options" w="96" x="2" y="70">
+                <g h="100" w="100" x="0" y="0">
+                    <image h="100" asset="greyBox" w="100" x="0" y="0"/>
+                    <image model="option.value.image" stretch="false" h="80" w="80" x="10" y="10" align="center" valign="middle"/>
+                    <text align="center" fontsize="2em" h="100" model="option.value.text" valign="middle" w="100"  x="0" y="0"/>
+                </g>
+                <event type="click">
+                    <action command="stop" sound="true" type="command" asset_model="option.value.audio"/>
+                    <action asset_model="option.value.audio" command="play" type="command"/>
+                </event>
+            </options>
+        </mtf>
+    </template>
+	
+	<stage h="100" id="first" var="item" w="100" x="0" y="0">							
+        <image asset="home_image" h="20" w="40" x="10" y="25"/>
+        <shape type="rect" h="20" w="40" x="10" y="25" hitArea="true">
+        <event type="click">
+            <action type="command" command="external" href="ekstep.in/c/org.ekstep.takeoff"/>
+        </event>
+        </shape>
+        <param name="next" value="stage1"/>
+	</stage>
+	
+    <stage h="100" id="stage1" iterate="assessment" var="item" w="100" x="0" y="0">	
+        <param name="previous" value="first"/>
+        <param name="next" value="stage2"/>	
+        <g x="12" y="0" w="76" h="88">
+            <embed template="item" var-item="item"/>
+        </g>
+	</stage>
+    
+	<stage h="100" id="stage2" iterate="assessment" var="item" w="100" x="0" y="0">		
+        <param name="previous" value="stage1"/>	
+        <image asset="home_image" h="20" w="40" x="10" y="25"/>
+	</stage>
+	
+</theme>
