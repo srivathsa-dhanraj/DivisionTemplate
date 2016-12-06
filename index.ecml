@@ -5,11 +5,9 @@
         <media id="hundred" src="hundred.png" type="image" />
         <media id="ten" src="ten.png" type="image" />
         <media id="one" src="one.png" type="image" />
-        <media id="uth" src="uthPlugin.js" type="plugin"/>
-<!--
+        <media id="division" src="DivisionPlugin.js" type="plugin"/>
         <media id="place" src="PlacePlugin.js" type="plugin"/>                
         <media id="tray" src="TrayPlugin.js" type="plugin"/>
--->
 
     </manifest>
 	
